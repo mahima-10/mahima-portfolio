@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* smooth hover transitions */
+* {
+  transition: color .15s ease, background-color .15s ease,
+              border-color .15s ease, box-shadow .15s ease;
+}
+
+/* card shadow helper */
+.card { @apply rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 shadow-sm; }
+.card:hover { box-shadow: 0 10px 25px -15px rgb(2 6 23 / .25); }
+
+/* base colors for light mode (kept minimal; we use dark UI mostly on page) */
+:root {
+  --bg: 248 250 252; /* slate-50 */
+  --fg: 15 23 42;    /* slate-900 */
+}
+.dark {
+  --bg: 2 6 23;      /* slate-950 */
+  --fg: 226 232 240; /* slate-200 */
+}
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+}
